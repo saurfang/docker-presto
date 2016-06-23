@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - "5432:5432"
+  rpresto:
+    build: .
+    volumes:
+      - ./config:/opt/presto/etc
+    ports:
+      - "8080:8080"
+    links:
+      - postgres
