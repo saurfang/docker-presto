@@ -3,5 +3,5 @@
 
 ```
 docker-compose up
-RScript load-iris.R
+Rscript load-iris.R
 ```
